@@ -1,7 +1,8 @@
 # Avalonia.BattleCity
 
-Port of https://github.com/kekekeks/Avalonia.BattleCity to Avalonia 0.9.12 (and .NET Core 3.0) which is a port of https://github.com/hacklex/PekaCity to Avalonia by [@kekekeks](https://github.com/kekekeks/Avalonia.BattleCity).
 2D game stub rendered completely by AvaloniaUI
+
+Port of https://github.com/kekekeks/Avalonia.BattleCity to Avalonia 0.9.12 (and .NET Core 3.0) which is a port of https://github.com/hacklex/PekaCity to Avalonia by [@kekekeks](https://github.com/kekekeks).
 
 ![Demo](.github/demo.gif?raw=true "Demo")
 
