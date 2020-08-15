@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ReactiveUI;
 
 namespace BattleCity.Models
 {
@@ -13,37 +14,26 @@ namespace BattleCity.Models
 
         public Facing Facing
         {
-            get { return _facing; }
-            set
-            {
-                if (value == _facing) return;
-                _facing = value;
-                OnPropertyChanged();
-            }
+            get => _facing;
+            set => this.RaiseAndSetIfChanged(ref _facing, value);
         }
 
         public CellLocation CellLocation
         {
             get { return _cellLocation; }
-            private set
-            {
-                if (value.Equals(_cellLocation)) return;
-                _cellLocation = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(IsMoving));
-            }
+            private set => this.RaiseAndSetIfChanged(ref _cellLocation, value);
         }
 
         public CellLocation TargetCellLocation
         {
             get { return _targetCellLocation; }
-            private set
-            {
-                if (value.Equals(_targetCellLocation)) return;
-                _targetCellLocation = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(IsMoving));
-            }
+            private set => this.RaiseAndSetIfChanged(ref _targetCellLocation, value);
+            // {
+            //     if (value.Equals(_targetCellLocation)) return;
+            //     _targetCellLocation = value;
+            //     OnPropertyChanged();
+            //     OnPropertyChanged(nameof(IsMoving));
+            // }
         }
 
         protected MovingGameObject(GameField field, CellLocation location, Facing facing) : base(location.ToPoint())

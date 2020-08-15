@@ -1,22 +1,17 @@
 ﻿using System.Collections.Generic;
 using Avalonia;
-using BattleCity.Infrastructure;
+using ReactiveUI;
 
 namespace BattleCity.Models
 { 
-    public abstract class GameObject : PropertyChangedBase
+    public abstract class GameObject : ReactiveObject
     {
         private Point _location;
 
         public Point Location
         {
-            get { return _location; }
-            protected set
-            {
-                if (value.Equals(_location)) return;
-                _location = value;
-                OnPropertyChanged();
-            }
+            get => _location;
+            protected set => this.RaiseAndSetIfChanged(ref _location, value);
         }
 
         public virtual int Layer => 0;

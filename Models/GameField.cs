@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Avalonia;
-using BattleCity.Infrastructure;
+using ReactiveUI;
 
 namespace BattleCity.Models
 {
-    public class GameField : PropertyChangedBase
+    public class GameField : ReactiveObject
     {
 
         public static GameField DesignInstance { get; } = new GameField();
